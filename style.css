@@ -1,0 +1,1046 @@
+/* ═══════════════════════════════════════════════════════════════
+   CYBERDECK — style.css
+   Structure:
+     1. Custom Properties
+     2. Reset & Base
+     3. Typography
+     4. Layout Utilities
+     5. Navigation
+     6. Hero (Section 1)
+     7. Screenshots
+     8. Updates (Section 2)
+     9. Guide (Section 3)
+    10. Contact (Section 4)
+    11. Footer
+    12. Media Queries
+═══════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────
+   1. CUSTOM PROPERTIES
+───────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg:           #0d0f14;
+  --color-surface:      #161b25;
+  --color-surface-alt:  #1e2535;
+  --color-accent:       #00c8ff;
+  --color-accent-soft:  #4a90d9;
+  --color-accent-glow:  rgba(0, 200, 255, 0.15);
+  --color-text:         #e8eaf0;
+  --color-text-muted:   #8892a4;
+  --color-divider:      #232b3a;
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+  /* Layout */
+  --container-width:  1100px;
+  --section-padding:  6rem 0;
+  --nav-height:       64px;
+
+  /* Components */
+  --radius-card:   1rem;
+  --radius-phone:  2rem;
+  --radius-badge:  0.5rem;
+}
+
+
+/* ─────────────────────────────────────────────
+   2. RESET & BASE
+───────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset scroll targets so they don't hide under the sticky nav */
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--color-accent-soft);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+strong {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+
+/* ─────────────────────────────────────────────
+   3. TYPOGRAPHY
+───────────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  color: var(--color-text);
+  max-width: 65ch;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+
+
+/* ─────────────────────────────────────────────
+   4. LAYOUT UTILITIES
+───────────────────────────────────────────── */
+.container {
+  width: min(var(--container-width), calc(100% - 2 * 5vw));
+  margin-inline: auto;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-dark {
+  background-color: var(--color-bg);
+}
+
+.section-surface {
+  background-color: var(--color-surface);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-inline: auto;
+}
+
+
+/* ─────────────────────────────────────────────
+   5. NAVIGATION
+───────────────────────────────────────────── */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background-color: rgba(13, 15, 20, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  color: var(--color-text);
+}
+
+.nav-logo-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  padding: 0.4rem 0.875rem;
+  border-radius: 0.4rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+}
+
+
+/* ─────────────────────────────────────────────
+   6. HERO (SECTION 1)
+───────────────────────────────────────────── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 7rem 0 5rem;
+}
+
+.hero-icon {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1.75rem;
+}
+
+.hero-title {
+  margin-bottom: 1.125rem;
+  /* Subtle text gradient for extra polish */
+  background: linear-gradient(135deg, #e8eaf0 40%, #00c8ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  max-width: 44ch;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+}
+
+.hero-sub strong {
+  color: var(--color-text);
+}
+
+/* Download badges */
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.625rem 1.25rem;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-badge);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+  min-width: 140px;
+}
+
+.badge:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-glow);
+  color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.badge-store {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+/* Image badge variant — strips the styled box so the PNG badge shows as-is */
+.badge--image {
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  min-width: unset;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.badge--image:hover {
+  background: none;
+  border: none;
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+.badge--image img {
+  display: block;
+  height: 48px;
+  width: auto;
+}
+
+
+/* ─────────────────────────────────────────────
+   7. SCREENSHOTS
+───────────────────────────────────────────── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+  margin-bottom: 2.5rem;
+  opacity: 0.4;
+}
+
+.screenshots-label {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.screenshots-label span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.screenshots-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+  /* On narrow viewports where all three frames can't sit side-by-side,
+     allow horizontal scroll rather than shrinking frames below legibility */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Phone frame wrapper — landscape orientation */
+.phone-frame {
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--color-divider);
+  overflow: hidden;
+  width: 340px;
+  flex-shrink: 0;
+  box-shadow:
+    0 0 0 1px rgba(0,200,255,0.06),
+    0 12px 36px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-surface-alt);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.phone-frame:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(0,200,255,0.2),
+    0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Real screenshot images inside a phone frame */
+.phone-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Placeholder shown until real screenshots are added */
+.phone-placeholder {
+  width: 100%;
+  aspect-ratio: 844 / 390;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1rem;
+  background-color: var(--color-surface-alt);
+  background-image:
+    linear-gradient(
+      160deg,
+      rgba(0,200,255,0.04) 0%,
+      transparent 60%
+    );
+}
+
+.phone-placeholder .mono-label {
+  font-size: 0.6875rem;
+}
+
+/* Guide-section phone frames are slightly wider */
+.guide-frame {
+  width: 400px;
+}
+
+
+/* ─────────────────────────────────────────────
+   8. UPDATES (SECTION 2)
+───────────────────────────────────────────── */
+
+/* Three-column card grid */
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Individual update card */
+.update-card {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.update-card:hover {
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Meta row: tag pill + date */
+.update-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Tag pill */
+.update-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 0.3rem;
+  line-height: 1.4;
+}
+
+.tag--release {
+  background-color: rgba(0, 200, 255, 0.12);
+  color: #00c8ff;
+}
+
+.tag--fix {
+  background-color: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+.tag--announcement {
+  background-color: rgba(74, 144, 217, 0.12);
+  color: #4a90d9;
+}
+
+/* Date */
+.update-date {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+/* Title */
+.update-title {
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 0;
+}
+
+/* Body container — holds rendered markdown (div, not p) */
+.update-body {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Paragraphs produced by parseMarkdown */
+.update-body p {
+  color: var(--color-text-muted);
+  font-size: inherit;
+  line-height: inherit;
+  max-width: none;
+  margin-bottom: 0.5rem;
+}
+
+.update-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bullet lists produced by parseMarkdown */
+.update-body ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.update-body ul:last-child {
+  margin-bottom: 0;
+}
+
+.update-body li {
+  color: var(--color-text-muted);
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: 0.2rem;
+}
+
+/* Inline formatting */
+.update-body strong {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.update-body em {
+  font-style: italic;
+}
+
+/*
+ * Clamped variant — used on the home page preview cards.
+ * Limits the visible body height and fades the bottom edge,
+ * hinting that more content is available on the Updates page.
+ */
+.update-body--clamped {
+  max-height: 7rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.update-body--clamped::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2.75rem;
+  background: linear-gradient(to bottom, transparent, var(--color-surface-alt));
+  pointer-events: none;
+}
+
+/* "View all updates" link row */
+.updates-more {
+  text-align: center;
+}
+
+.updates-all-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-accent-soft);
+  border: 1px solid var(--color-divider);
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  text-decoration: none;
+}
+
+.updates-all-link:hover {
+  color: var(--color-accent);
+  border-color: rgba(0, 200, 255, 0.4);
+  background-color: var(--color-accent-glow);
+}
+
+.updates-arrow {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.updates-all-link:hover .updates-arrow {
+  transform: translateX(3px);
+}
+
+/* ── updates.html — full listing page ────────── */
+
+/* Page-level wrapper used on updates.html */
+.updates-page-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: 3rem;
+}
+
+.updates-page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.updates-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.updates-back-link:hover {
+  color: var(--color-accent);
+}
+
+.updates-back-arrow {
+  width: 0.875rem;
+  height: 0.875rem;
+  transform: scaleX(-1); /* Reuse the same arrow SVG, flipped */
+}
+
+/* Full listing: single-column stack */
+.updates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+/* Cards on updates.html are slightly more spacious */
+.updates-list .update-card {
+  padding: 1.875rem 2rem;
+}
+
+.updates-list .update-title {
+  font-size: 1.1875rem;
+}
+
+/* Slightly larger text for the full listing page */
+.updates-list .update-body,
+.updates-list .update-body p,
+.updates-list .update-body li {
+  font-size: 1rem;
+}
+
+
+/* ─────────────────────────────────────────────
+   9. GUIDE (SECTION 3)
+───────────────────────────────────────────── */
+.guide-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.guide-step:last-child {
+  margin-bottom: 0;
+}
+
+/* Reverse: image goes right, text goes left */
+.guide-step--reverse {
+  grid-template-columns: 1fr auto;
+}
+
+.guide-step--reverse .phone-frame {
+  order: 2;
+}
+
+.guide-step--reverse .guide-text {
+  order: 1;
+}
+
+.guide-text {
+  max-width: 480px;
+}
+
+.step-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.guide-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.875rem;
+}
+
+.guide-text p {
+  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+.guide-text p strong {
+  color: var(--color-text);
+}
+
+
+/* ─────────────────────────────────────────────
+   10. CONTACT (SECTION 4)
+───────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Card base */
+.contact-card {
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-card);
+  padding: 2rem 2.25rem;
+  border-left: 3px solid var(--color-accent);
+}
+
+.contact-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.contact-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+/* Developer card */
+.contact-card--developer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.developer-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--color-divider);
+  background-color: var(--color-surface);
+}
+
+.developer-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.developer-info {
+  flex: 1;
+}
+
+.developer-info h3 {
+  margin-bottom: 0.25rem;
+}
+
+.developer-name {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-accent) !important;
+  margin-bottom: 0.75rem;
+}
+
+.developer-links {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Shared contact link style */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent-soft);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--color-accent);
+}
+
+.link-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+}
+
+/* Support card */
+.contact-card--support h3 {
+  margin-bottom: 1rem;
+}
+
+.support-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.support-links li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.support-note {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  padding-left: 1.5rem; /* Align with icon offset */
+}
+
+
+/* ─────────────────────────────────────────────
+   11. FOOTER
+───────────────────────────────────────────── */
+.site-footer {
+  background-color: var(--color-bg);
+  border-top: 1px solid var(--color-divider);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.site-footer p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  max-width: none;
+}
+
+
+/* ─────────────────────────────────────────────
+   12. MEDIA QUERIES
+───────────────────────────────────────────── */
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  h1 { font-size: 2.75rem; }
+  h2 { font-size: 2rem; }
+
+  .hero {
+    padding: 5rem 0 4rem;
+  }
+
+  .guide-step {
+    gap: 2.5rem;
+  }
+
+  /* Updates: collapse to 2 columns on tablet */
+  .updates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 4rem 0;
+    --nav-height: auto;
+  }
+
+  /* Nav stacks logo + links */
+  #site-header {
+    height: auto;
+    padding: 0.875rem 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 0.125rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  /* Hero */
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.6rem; }
+
+  .hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+  }
+
+  /* Guide steps: single column, image on top */
+  .guide-step,
+  .guide-step--reverse {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2rem;
+  }
+
+  .guide-step--reverse .phone-frame,
+  .guide-step--reverse .guide-text {
+    order: unset;
+  }
+
+  .guide-step--reverse .phone-frame {
+    order: -1; /* Always put image first on mobile */
+  }
+
+  .guide-text {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .step-label {
+    display: block;
+    margin-inline: auto;
+  }
+
+  /* Updates: single column on mobile */
+  .updates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact cards stack */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card--developer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .developer-links {
+    align-items: center;
+  }
+}
+
+/* ── Small (≤ 480px) ── */
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 3rem 0;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+
+  .hero-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .badge {
+    width: 100%;
+    max-width: 220px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .phone-frame,
+  .guide-frame {
+    width: 280px;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+}

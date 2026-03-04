@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — CyberDeck
+  Helps search engines discover and prioritise all pages on the site.
+  Submit this URL to Google Search Console and Bing Webmaster Tools
+  once the site is live: https://cyberdeckapp.com/sitemap.xml
+
+  When you add a new page to the site, add a corresponding <url> entry here.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://cyberdeckapp.com/</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cyberdeckapp.com/updates.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <!-- Update this date each time you add a new entry to updates.js -->
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

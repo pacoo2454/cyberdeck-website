@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>CyberDeck — Remote Companion Control</title>
+  <meta name="description" content="CyberDeck is a free native mobile app for iOS and Android that lets you remotely control Companion over your local network — from anywhere in the room." />
+  <link rel="canonical" href="https://cyberdeckapp.com/" />
+  <meta name="theme-color" content="#00c8ff" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph — controls appearance when shared on social media, iMessage, Discord, etc. -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cyberdeckapp.com/" />
+  <meta property="og:title"       content="CyberDeck — Remote Companion Control" />
+  <meta property="og:description" content="A free native mobile app for iOS and Android that lets you remotely control Companion over your local network." />
+  <meta property="og:image"       content="https://cyberdeckapp.com/assets/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="CyberDeck" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="CyberDeck — Remote Companion Control" />
+  <meta name="twitter:description" content="A free native mobile app for iOS and Android that lets you remotely control Companion over your local network." />
+  <meta name="twitter:image"       content="https://cyberdeckapp.com/assets/og-image.png" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CyberDeck",
+    "description": "A native mobile application for remotely controlling Companion over a local network.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": ["iOS", "Android"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "url": "https://cyberdeckapp.com/",
+    "publisher": {
+      "@type": "Person",
+      "name": "Your Name"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="nav-inner container">
+      <a href="#home" class="nav-logo" aria-label="CyberDeck home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="assets/icon.svg" alt="CyberDeck icon" width="32" height="32" />
+        </div>
+        <span class="nav-logo-text">CyberDeck</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#updates" class="nav-link">Updates</a></li>
+          <li><a href="#guide" class="nav-link">Guide</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 1 — HOME / HERO
+    ════════════════════════════════════════════ -->
+    <section id="home" class="section section-dark">
+      <div class="container">
+
+        <!-- Hero -->
+        <div class="hero">
+          <div class="hero-icon" aria-hidden="true">
+            <img src="assets/icon.svg" alt="CyberDeck icon" width="96" height="96" />
+          </div>
+
+          <h1 class="hero-title">CyberDeck</h1>
+
+          <p class="hero-sub">
+            A native mobile application for remotely controlling
+            <strong>Companion</strong> over your local network — from
+            anywhere in the room.
+          </p>
+
+          <div class="hero-badges">
+            <a href="#" class="badge badge--image" aria-label="Download on the App Store">
+              <img src="assets/badge-appstore.png" alt="Download on the App Store" width="270" height="80" />
+            </a>
+            <a href="#" class="badge badge--image" aria-label="Get it on Google Play">
+              <img src="assets/badge-googleplay.png" alt="Get it on Google Play" width="270" height="80" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Screenshot divider -->
+        <div class="section-divider" aria-hidden="true"></div>
+
+        <!-- Screenshots -->
+        <div class="screenshots-label" aria-hidden="true">
+          <span>Screenshots</span>
+        </div>
+
+        <div class="screenshots-row" role="list" aria-label="App screenshots">
+          <div class="phone-frame" role="listitem">
+            <img src="assets/screenshot-1.png" alt="CyberDeck home screen showing button grid" width="844" height="390" />
+          </div>
+          <div class="phone-frame" role="listitem">
+            <img src="assets/screenshot-2.png" alt="CyberDeck connection screen" width="844" height="390" />
+          </div>
+          <div class="phone-frame" role="listitem">
+            <img src="assets/screenshot-3.png" alt="CyberDeck controls screen" width="844" height="390" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 2 — UPDATES / LATEST NEWS
+    ════════════════════════════════════════════ -->
+    <section id="updates" class="section section-surface">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Latest Updates</h2>
+          <p class="section-sub">
+            Recent news, release notes, and announcements for CyberDeck.
+          </p>
+        </div>
+
+        <!-- Cards injected here by the render script below -->
+        <div class="updates-grid" id="updates-grid">
+          <noscript>
+            <p style="color: var(--color-text-muted); text-align: center;">
+              JavaScript is required to display updates. Please enable it in your browser.
+            </p>
+          </noscript>
+        </div>
+
+        <div class="updates-more">
+          <a href="updates.html" class="updates-all-link">
+            View all updates
+            <svg class="updates-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 3 — GUIDE / HOW TO USE
+    ════════════════════════════════════════════ -->
+    <section id="guide" class="section section-dark">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>How to Use CyberDeck</h2>
+          <p class="section-sub">
+            Get up and running in minutes. All you need is your mobile
+            device and a machine running Companion on the same network.
+          </p>
+        </div>
+
+        <!-- Step 1 -->
+        <div class="guide-step">
+          <div class="phone-frame guide-frame">
+            <img src="assets/screenshot-install.png" alt="App Store install screen for CyberDeck" width="844" height="390" />
+          </div>
+
+          <div class="guide-text">
+            <span class="step-label mono-label">01 /</span>
+            <h3>Install the App</h3>
+            <p>
+              Download CyberDeck from the App Store or Google Play. The app
+              is free and requires iOS 15+ or Android 10+. No account or
+              registration is needed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="guide-step guide-step--reverse">
+          <div class="phone-frame guide-frame">
+            <img src="assets/screenshot-connect.png" alt="CyberDeck connection settings screen" width="844" height="390" />
+          </div>
+
+          <div class="guide-text">
+            <span class="step-label mono-label">02 /</span>
+            <h3>Connect to Companion</h3>
+            <p>
+              Make sure your phone and the machine running Companion are on
+              the same Wi-Fi network. Open CyberDeck, tap <strong>Add
+              Device</strong>, and enter the IP address and port shown in
+              Companion's settings. CyberDeck will connect automatically.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="guide-step">
+          <div class="phone-frame guide-frame">
+            <img src="assets/screenshot-control.png" alt="CyberDeck button grid control screen" width="844" height="390" />
+          </div>
+
+          <div class="guide-text">
+            <span class="step-label mono-label">03 /</span>
+            <h3>Take Control</h3>
+            <p>
+              Your Companion button grid will appear on screen, fully
+              interactive. Tap any button to trigger it remotely. Pages,
+              button labels, and colors all sync live from your Companion
+              configuration — no extra setup required.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SECTION 4 — CONTACT / DEVELOPER INFO
+    ════════════════════════════════════════════ -->
+    <section id="contact" class="section section-surface">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>About &amp; Support</h2>
+          <p class="section-sub">
+            CyberDeck is an independent project. Reach out if you run into
+            any issues or have a feature request.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Developer card -->
+          <div class="contact-card contact-card--developer">
+            <div class="developer-avatar">
+              <img src="assets/avatar.png" alt="Developer photo" width="128" height="128" />
+            </div>
+
+            <div class="developer-info">
+              <h3>The Developer</h3>
+              <!-- Replace "Your Name" and bio text with actual content -->
+              <p class="developer-name">Your Name</p>
+              <p>
+                Independent developer passionate about live production tools
+                and open source software. CyberDeck was built out of a need
+                for a clean, fast mobile interface for Companion.
+              </p>
+              <div class="developer-links">
+                <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                  <!-- GitHub icon -->
+                  <svg class="link-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.477 0 10c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.157-1.11-1.465-1.11-1.465-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0110 4.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .268.18.58.688.482C17.137 18.163 20 14.418 20 10c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/>
+                  </svg>
+                  GitHub Profile
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support card -->
+          <div class="contact-card contact-card--support">
+            <h3>Support</h3>
+            <p>
+              Found a bug? Have a question about setup? There are two ways
+              to get help:
+            </p>
+
+            <ul class="support-links" role="list">
+              <li>
+                <a href="mailto:support@example.com" class="contact-link">
+                  <!-- Email icon -->
+                  <svg class="link-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                  </svg>
+                  support@example.com
+                </a>
+                <p class="support-note">Email for direct support. Expect a reply within a few days.</p>
+              </li>
+              <li>
+                <a href="https://github.com/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                  <!-- Bug icon -->
+                  <svg class="link-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  GitHub Issues
+                </a>
+                <p class="support-note">Open an issue on GitHub for bugs, crashes, or feature requests.</p>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CyberDeck. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Updates data & renderer -->
+  <script src="updates.js"></script>
+  <script>
+    (function () {
+      var TAG_CLASSES = {
+        'release':      'tag--release',
+        'fix':          'tag--fix',
+        'announcement': 'tag--announcement'
+      };
+
+      function tagClass(tag) {
+        return TAG_CLASSES[tag.toLowerCase()] || 'tag--announcement';
+      }
+
+      function formatDate(dateStr) {
+        return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+
+      /* Converts **bold**, *italic* within a single line of text */
+      function inlineMarkdown(str) {
+        str = str.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+        str = str.replace(/\*([^*\n]+)\*/g,     '<em>$1</em>');
+        return str;
+      }
+
+      /*
+       * Converts a body string (with \n line breaks and \n\n paragraph
+       * breaks) into HTML. Blocks starting with "- " become <ul> lists;
+       * everything else becomes a <p> with <br> for single line breaks.
+       */
+      function parseMarkdown(text) {
+        text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        var blocks = text.trim().split(/\n{2,}/);
+        return blocks.map(function (block) {
+          block = block.trim();
+          if (!block) return '';
+          var lines = block.split('\n');
+          var isList = lines.every(function (l) { return /^[-*]\s/.test(l); });
+          if (isList) {
+            return '<ul>' + lines.map(function (l) {
+              return '<li>' + inlineMarkdown(l.replace(/^[-*]\s+/, '')) + '</li>';
+            }).join('') + '</ul>';
+          }
+          return '<p>' + inlineMarkdown(lines.join('<br>')) + '</p>';
+        }).join('');
+      }
+
+      /* Home page: body is clamped — shows a preview with a fade */
+      function renderCard(entry) {
+        return '<article class="update-card">' +
+          '<div class="update-card-meta">' +
+            '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
+            '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +
+          '</div>' +
+          '<h3 class="update-title">' + entry.title + '</h3>' +
+          '<div class="update-body update-body--clamped">' + parseMarkdown(entry.body) + '</div>' +
+        '</article>';
+      }
+
+      var grid = document.getElementById('updates-grid');
+      if (grid && typeof CYBERDECK_UPDATES !== 'undefined' && CYBERDECK_UPDATES.length > 0) {
+        grid.innerHTML = CYBERDECK_UPDATES.slice(0, 3).map(renderCard).join('');
+      }
+    })();
+  </script>
+
+</body>
+</html>

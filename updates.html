@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary meta -->
+  <title>Updates &amp; Release Notes — CyberDeck</title>
+  <meta name="description" content="The full history of CyberDeck releases, bug fixes, and announcements. See what's new in every version of the Companion remote control app." />
+  <link rel="canonical" href="https://cyberdeckapp.com/updates.html" />
+  <meta name="theme-color" content="#00c8ff" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://cyberdeckapp.com/updates.html" />
+  <meta property="og:title"       content="Updates &amp; Release Notes — CyberDeck" />
+  <meta property="og:description" content="The full history of CyberDeck releases, bug fixes, and announcements." />
+  <meta property="og:image"       content="https://cyberdeckapp.com/assets/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="CyberDeck" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Updates &amp; Release Notes — CyberDeck" />
+  <meta name="twitter:description" content="The full history of CyberDeck releases, bug fixes, and announcements." />
+  <meta name="twitter:image"       content="https://cyberdeckapp.com/assets/og-image.png" />
+
+  <!-- JSON-LD Structured Data: BreadcrumbList so Google understands the page hierarchy -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "CyberDeck",
+        "item": "https://cyberdeckapp.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Updates",
+        "item": "https://cyberdeckapp.com/updates.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="nav-inner container">
+      <a href="index.html" class="nav-logo" aria-label="CyberDeck home">
+        <div class="nav-logo-icon" aria-hidden="true">
+          <img src="assets/icon.svg" alt="CyberDeck icon" width="32" height="32" />
+        </div>
+        <span class="nav-logo-text">CyberDeck</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="index.html#updates" class="nav-link">Updates</a></li>
+          <li><a href="index.html#guide" class="nav-link">Guide</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-dark">
+      <div class="container">
+
+        <!-- Back link + page heading -->
+        <div class="updates-page-header">
+          <a href="index.html" class="updates-back-link">
+            <svg class="updates-arrow updates-back-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to CyberDeck
+          </a>
+          <h1>All Updates</h1>
+          <p class="section-sub">
+            The full history of releases, fixes, and announcements.
+          </p>
+        </div>
+
+        <!-- Cards injected here by the render script below -->
+        <div class="updates-list" id="updates-list" role="list">
+          <noscript>
+            <p style="color: var(--color-text-muted);">
+              JavaScript is required to display updates. Please enable it in your browser.
+            </p>
+          </noscript>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 CyberDeck. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Updates data & renderer -->
+  <script src="updates.js"></script>
+  <script>
+    (function () {
+      var TAG_CLASSES = {
+        'release':      'tag--release',
+        'fix':          'tag--fix',
+        'announcement': 'tag--announcement'
+      };
+
+      function tagClass(tag) {
+        return TAG_CLASSES[tag.toLowerCase()] || 'tag--announcement';
+      }
+
+      function formatDate(dateStr) {
+        return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+      }
+
+      /* Converts **bold**, *italic* within a single line of text */
+      function inlineMarkdown(str) {
+        str = str.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+        str = str.replace(/\*([^*\n]+)\*/g,     '<em>$1</em>');
+        return str;
+      }
+
+      /*
+       * Converts a body string (with \n line breaks and \n\n paragraph
+       * breaks) into HTML. Blocks starting with "- " become <ul> lists;
+       * everything else becomes a <p> with <br> for single line breaks.
+       */
+      function parseMarkdown(text) {
+        text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+        var blocks = text.trim().split(/\n{2,}/);
+        return blocks.map(function (block) {
+          block = block.trim();
+          if (!block) return '';
+          var lines = block.split('\n');
+          var isList = lines.every(function (l) { return /^[-*]\s/.test(l); });
+          if (isList) {
+            return '<ul>' + lines.map(function (l) {
+              return '<li>' + inlineMarkdown(l.replace(/^[-*]\s+/, '')) + '</li>';
+            }).join('') + '</ul>';
+          }
+          return '<p>' + inlineMarkdown(lines.join('<br>')) + '</p>';
+        }).join('');
+      }
+
+      /* Updates page: body is unclamped — shows the full formatted text */
+      function renderCard(entry) {
+        return '<article class="update-card" role="listitem">' +
+          '<div class="update-card-meta">' +
+            '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
+            '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +
+          '</div>' +
+          '<h2 class="update-title">' + entry.title + '</h2>' +
+          '<div class="update-body">' + parseMarkdown(entry.body) + '</div>' +
+        '</article>';
+      }
+
+      var list = document.getElementById('updates-list');
+      if (list && typeof CYBERDECK_UPDATES !== 'undefined' && CYBERDECK_UPDATES.length > 0) {
+        list.innerHTML = CYBERDECK_UPDATES.map(renderCard).join('');
+      } else if (list) {
+        list.innerHTML = '<p style="color: var(--color-text-muted);">No updates yet. Check back soon.</p>';
+      }
+    })();
+  </script>
+
+</body>
+</html>

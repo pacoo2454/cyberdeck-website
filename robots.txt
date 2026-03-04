@@ -1,0 +1,9 @@
+# robots.txt — CyberDeck
+# Instructs search engine crawlers which pages they may index.
+# For more information: https://www.robotstxt.org
+
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap
+Sitemap: https://cyberdeckapp.com/sitemap.xml
