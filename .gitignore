@@ -1,0 +1,7 @@
+# Design documents and tooling — kept locally, not published to GitHub
+*.md
+*.py
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
