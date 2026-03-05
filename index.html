@@ -383,14 +383,16 @@
 
       /* Home page: body is clamped — shows a preview with a fade */
       function renderCard(entry) {
-        return '<article class="update-card">' +
-          '<div class="update-card-meta">' +
-            '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
-            '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +
-          '</div>' +
-          '<h3 class="update-title">' + entry.title + '</h3>' +
-          '<div class="update-body update-body--clamped">' + parseMarkdown(entry.body) + '</div>' +
-        '</article>';
+        return '<a href="updates.html#update-' + entry.id + '" class="update-card-link">' +
+          '<article class="update-card">' +
+            '<div class="update-card-meta">' +
+              '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
+              '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +
+            '</div>' +
+            '<h3 class="update-title">' + entry.title + '</h3>' +
+            '<div class="update-body update-body--clamped">' + parseMarkdown(entry.body) + '</div>' +
+          '</article>' +
+        '</a>';
       }
 
       var grid = document.getElementById('updates-grid');
