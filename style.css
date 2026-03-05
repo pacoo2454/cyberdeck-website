@@ -21,15 +21,15 @@
 ───────────────────────────────────────────── */
 :root {
   /* Colors */
-  --color-bg:           #0d0f14;
-  --color-surface:      #161b25;
-  --color-surface-alt:  #1e2535;
-  --color-accent:       #00c8ff;
-  --color-accent-soft:  #4a90d9;
-  --color-accent-glow:  rgba(0, 200, 255, 0.15);
-  --color-text:         #e8eaf0;
-  --color-text-muted:   #8892a4;
-  --color-divider:      #232b3a;
+  --color-bg:           #07060f;
+  --color-surface:      #100e1c;
+  --color-surface-alt:  #1a1530;
+  --color-accent:       #ff00aa;
+  --color-accent-soft:  #00e5ff;
+  --color-accent-glow:  rgba(255, 0, 170, 0.15);
+  --color-text:         #f0e8ff;
+  --color-text-muted:   #8b7fa8;
+  --color-divider:      #251e38;
 
   /* Typography */
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
@@ -295,7 +295,7 @@ p {
 .hero-title {
   margin-bottom: 1.125rem;
   /* Subtle text gradient for extra polish */
-  background: linear-gradient(135deg, #e8eaf0 40%, #00c8ff 100%);
+  background: linear-gradient(135deg, #f0e8ff 40%, #ff00aa 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -411,7 +411,7 @@ p {
   width: 340px;
   flex-shrink: 0;
   box-shadow:
-    0 0 0 1px rgba(0,200,255,0.06),
+    0 0 0 1px rgba(255,0,170,0.06),
     0 12px 36px rgba(0, 0, 0, 0.5);
   background-color: var(--color-surface-alt);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -420,7 +420,7 @@ p {
 .phone-frame:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 0 0 1px rgba(0,200,255,0.2),
+    0 0 0 1px rgba(255,0,170,0.2),
     0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
@@ -463,7 +463,7 @@ p {
 }
 
 .update-card:hover {
-  border-color: rgba(0, 200, 255, 0.3);
+  border-color: rgba(255, 0, 170, 0.3);
   transform: translateY(-2px);
 }
 
@@ -475,7 +475,7 @@ p {
 
 .update-card-link:hover .update-card,
 .update-card-link:focus-visible .update-card {
-  border-color: rgba(0, 200, 255, 0.3);
+  border-color: rgba(255, 0, 170, 0.3);
   transform: translateY(-2px);
 }
 
@@ -501,8 +501,8 @@ p {
 }
 
 .tag--release {
-  background-color: rgba(0, 200, 255, 0.12);
-  color: #00c8ff;
+  background-color: rgba(255, 0, 170, 0.12);
+  color: #ff00aa;
 }
 
 .tag--fix {
@@ -511,8 +511,8 @@ p {
 }
 
 .tag--announcement {
-  background-color: rgba(74, 144, 217, 0.12);
-  color: #4a90d9;
+  background-color: rgba(0, 229, 255, 0.12);
+  color: #00e5ff;
 }
 
 /* Date */
@@ -623,7 +623,7 @@ p {
 
 .updates-all-link:hover {
   color: var(--color-accent);
-  border-color: rgba(0, 200, 255, 0.4);
+  border-color: rgba(255, 0, 170, 0.4);
   background-color: var(--color-accent-glow);
 }
 
