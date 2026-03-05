@@ -45,7 +45,7 @@
     "url": "https://cyberdeckapp.com/",
     "publisher": {
       "@type": "Person",
-      "name": "Your Name"
+      "name": "Jeffrey Bertuch"
     }
   }
   </script>
@@ -58,6 +58,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- ═══════════════════════════════════════════
        NAVIGATION
@@ -82,7 +83,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ═══════════════════════════════════════════
          SECTION 1 — HOME / HERO
@@ -334,63 +335,21 @@
 
   <!-- Updates data & renderer -->
   <script src="updates.js"></script>
+  <script src="updates-renderer.js"></script>
   <script>
     (function () {
-      var TAG_CLASSES = {
-        'release':      'tag--release',
-        'fix':          'tag--fix',
-        'announcement': 'tag--announcement'
-      };
-
-      function tagClass(tag) {
-        return TAG_CLASSES[tag.toLowerCase()] || 'tag--announcement';
-      }
-
-      function formatDate(dateStr) {
-        return new Date(dateStr + 'T00:00:00').toLocaleDateString('en-US', {
-          year: 'numeric', month: 'long', day: 'numeric'
-        });
-      }
-
-      /* Converts **bold**, *italic* within a single line of text */
-      function inlineMarkdown(str) {
-        str = str.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
-        str = str.replace(/\*([^*\n]+)\*/g,     '<em>$1</em>');
-        return str;
-      }
-
-      /*
-       * Converts a body string (with \n line breaks and \n\n paragraph
-       * breaks) into HTML. Blocks starting with "- " become <ul> lists;
-       * everything else becomes a <p> with <br> for single line breaks.
-       */
-      function parseMarkdown(text) {
-        text = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
-        var blocks = text.trim().split(/\n{2,}/);
-        return blocks.map(function (block) {
-          block = block.trim();
-          if (!block) return '';
-          var lines = block.split('\n');
-          var isList = lines.every(function (l) { return /^[-*]\s/.test(l); });
-          if (isList) {
-            return '<ul>' + lines.map(function (l) {
-              return '<li>' + inlineMarkdown(l.replace(/^[-*]\s+/, '')) + '</li>';
-            }).join('') + '</ul>';
-          }
-          return '<p>' + inlineMarkdown(lines.join('<br>')) + '</p>';
-        }).join('');
-      }
+      var R = window.CyberDeckRenderer;
 
       /* Home page: body is clamped — shows a preview with a fade */
       function renderCard(entry) {
-        return '<a href="updates.html#update-' + entry.id + '" class="update-card-link">' +
+        return '<a href="updates.html#update-' + R.escapeHTML(entry.id) + '" class="update-card-link">' +
           '<article class="update-card">' +
             '<div class="update-card-meta">' +
-              '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
-              '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +
+              '<span class="update-tag ' + R.tagClass(entry.tag) + '">' + R.escapeHTML(entry.tag) + '</span>' +
+              '<time class="update-date" datetime="' + R.escapeHTML(entry.date) + '">' + R.formatDate(entry.date) + '</time>' +
             '</div>' +
-            '<h3 class="update-title">' + entry.title + '</h3>' +
-            '<div class="update-body update-body--clamped">' + parseMarkdown(entry.body) + '</div>' +
+            '<h3 class="update-title">' + R.escapeHTML(entry.title) + '</h3>' +
+            '<div class="update-body update-body--clamped">' + R.parseMarkdown(entry.body) + '</div>' +
           '</article>' +
         '</a>';
       }

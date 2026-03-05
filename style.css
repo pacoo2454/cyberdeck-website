@@ -73,6 +73,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Skip navigation link — hidden until focused by keyboard */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: top 0.1s;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -321,22 +342,6 @@ p {
   transform: translateY(-2px);
 }
 
-.badge-label {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  font-family: var(--font-body);
-  line-height: 1;
-  margin-bottom: 0.2rem;
-}
-
-.badge-store {
-  font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text);
-  line-height: 1;
-}
-
 /* Image badge variant — strips the styled box so the PNG badge shows as-is */
 .badge--image {
   padding: 0;
@@ -426,26 +431,6 @@ p {
   height: auto;
 }
 
-/* Placeholder shown until real screenshots are added */
-.phone-placeholder {
-  width: 100%;
-  aspect-ratio: 844 / 390;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 1rem;
-  background-color: var(--color-surface-alt);
-  background-image:
-    linear-gradient(
-      160deg,
-      rgba(0,200,255,0.04) 0%,
-      transparent 60%
-    );
-}
-
-.phone-placeholder .mono-label {
-  font-size: 0.6875rem;
-}
 
 /* Guide-section phone frames are slightly wider */
 .guide-frame {
