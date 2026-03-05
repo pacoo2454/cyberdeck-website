@@ -173,7 +173,7 @@
 
       /* Updates page: body is unclamped — shows the full formatted text */
       function renderCard(entry) {
-        return '<article class="update-card" role="listitem">' +
+        return '<article class="update-card" id="update-' + entry.id + '" role="listitem">' +
           '<div class="update-card-meta">' +
             '<span class="update-tag ' + tagClass(entry.tag) + '">' + entry.tag + '</span>' +
             '<time class="update-date" datetime="' + entry.date + '">' + formatDate(entry.date) + '</time>' +

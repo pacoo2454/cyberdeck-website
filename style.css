@@ -482,6 +482,18 @@ p {
   transform: translateY(-2px);
 }
 
+.update-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.update-card-link:hover .update-card,
+.update-card-link:focus-visible .update-card {
+  border-color: rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Meta row: tag pill + date */
 .update-card-meta {
   display: flex;
